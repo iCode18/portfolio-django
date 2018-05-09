@@ -21,17 +21,17 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">iCode</a>
+        <a class="navbar-brand" href="{% url 'home' %}">iCode</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">Linkedin</a>
+                <a class="nav-item nav-link" href="https://www.linkedin.com/in/afshin-alavi/">Linkedin</a>
                 <a class="nav-item nav-link" href="{% static 'Afshin Alavi-CV.pdf' %}">CV</a>
-                <a class="nav-item nav-link" href="www.icode18.github.io">Github Portfolio</a>
-                <a class="nav-item nav-link active" href="#">Blog</a>
+                <a class="nav-item nav-link" href="http://icode18.github.io">Github Portfolio</a>
+                <a class="nav-item nav-link active" href="{% url 'blog' %}">Blog</a>
             </div>
         </div>
     </nav>
@@ -57,7 +57,7 @@
             <hr color="white">
             {% for blog in blogs.all %}
                 <div>
-                    <a href=""><h4>{{ blog.title }}</h4></a>
+                    <a href="{% url 'detail' blog.id %}"><h4>{{ blog.title }}</h4></a>
                     <p>{{ blog.summary }}</p>
 
 
